@@ -16,15 +16,15 @@
   <div id="setster-wrapper">
     <!-- Begin Setster Widget -->
     <script type="text/javascript" charset="utf-8">
-    var setster_widget_store;
+    var setster_widget;
     function onLoad() {
-      var setster_widget_store_options = {};
-      setster_widget_store_options.display = "embed";  
-      setster_widget_store_options.uri = "robbinsbrothers";
-      setster_widget_store_options.setsterURL = setsHost; 
-      setster_widget_store_options.container = "setster-wrapper";
-      setster_widget_store_options.defaultLocation = "30257|30258|30259|30260|30261|30262|30268|30269|30270|30271|30272|30273|30274|30275|30276"; 
-      setster_widget_store = new Setster.setster_widget_store(setster_widget_store_options);
+      var setster_widget_options = {};
+      setster_widget_options.display = "embed";  
+      setster_widget_options.uri = "robbinsbrothers";
+      setster_widget_options.setsterURL = setsHost; 
+      setster_widget_options.container = "setster-wrapper";
+      setster_widget_options.defaultLocation = "30257|30258|30259|30260|30261|30262|30268|30269|30270|30271|30272|30273|30274|30275|30276"; 
+      setster_widget = new Setster.setster_widget(setster_widget_options);
     }
     </script>
      <script type="text/javascript" charset="utf-8">
