@@ -11,35 +11,34 @@
 <body>
 
 <div>
-<p>In-Store Appointment</p>
-<p>We’d love to set aside some time to address your needs.</p>
+  <p>In-Store Appointment</p>
+  <p>We’d love to set aside some time to address your needs.</p>
 
-  
-<!-- Begin Setster Widget -->
-<script type="text/javascript" charset="utf-8">
-var setster_widget;
-function onLoad() {
-  var setster_widget_options = {};
-  setster_widget_options.display = "embed";  
-  setster_widget_options.uri = "robbinsbrothers";
-  setster_widget_options.setsterURL = setsHost; 
-  setster_widget_options.container = "setster-wrapper";
-  setster_widget_options.defaultLocation = "30257|30258|30259|30260|30261|30262|30268|30269|30270|30271|30272|30273|30274|30275|30276"; 
-  setster_widget = new Setster.setster_widget(setster_widget_options);
-}
-</script>
-<script type="text/javascript" charset="utf-8">
- var script = document.createElement("script");
- var setsHost = "https://www.setster.com/widget/";
- script.src = setsHost + "js/setster_over.js?v=2";
- script.type = "text/javascript";
- var head = document.getElementsByTagName("head")[0];
- head.appendChild(script);
- script.onload = onLoad
-</script>
-<!-- End Setster Widget -->
-
-
+  <div id="setster-wrapper">
+    <!-- Begin Setster Widget -->
+    <script type="text/javascript" charset="utf-8">
+    var setster_widget;
+    function onLoad() {
+      var setster_widget_options = {};
+      setster_widget_options.display = "embed";  
+      setster_widget_options.uri = "robbinsbrothers";
+      setster_widget_options.setsterURL = setsHost; 
+      setster_widget_options.container = "setster-wrapper";
+      setster_widget_options.defaultLocation = "30257|30258|30259|30260|30261|30262|30268|30269|30270|30271|30272|30273|30274|30275|30276"; 
+      setster_widget = new Setster.setster_widget(setster_widget_options);
+    }
+    </script>
+    <script type="text/javascript" charset="utf-8">
+     var script = document.createElement("script");
+     var setsHost = "https://www.setster.com/widget/";
+     script.src = setsHost + "js/setster_over.js?v=2";
+     script.type = "text/javascript";
+     var head = document.getElementsByTagName("head")[0];
+     head.appendChild(script);
+     script.onload = onLoad
+    </script>
+    <!-- End Setster Widget -->
+  </div> 
 </div>
 
 <br>
@@ -48,18 +47,41 @@ function onLoad() {
 <br>
 
 <div>
-<p>Virtual Appointment</p>
-<p>Description about virtual appointment</p>
-<p>You can see us, but we can't see you. Unless of course you want us to! You don't need a camera to enjoy this, just an internet connection and a device to view.</p>
+  <p>Virtual Appointment</p>
+  <p>Description about virtual appointment</p>
+  <p>You can see us, but we can't see you. Unless of course you want us to! You don't need a camera to enjoy this, just an internet connection and a device to view.</p>
+  <p>Please note, it may take us up to an hour to prepare for a virtual appointment. We appreciate your patience. We look forward to connecting with you as soon as we can.
+  <p>Phone: 800-295-1543</p>
+  <p>Virtual Store Hours: (Pacific Time)</p>
+  <p>Mon - Fri: 11 AM - 6 PM</p>
 
-<p>Please note, it may take us up to an hour to prepare for a virtual appointment. We appreciate your patience. We look forward to connecting with you as soon as we can.
-
-<p>Phone: 800-295-1543</p>
-<p>Virtual Store Hours: (Pacific Time)</p>
-<p>Mon - Fri: 11 AM - 6 PM</p>
-</div>
   
-
-
+  <div id="setster-wrapper">
+      <!-- Begin Setster Widget - virtual appt -->
+    <script type="text/javascript" charset="utf-8">
+    var setster_widget;
+    function onLoad() {
+      var setster_widget_options = {};
+      setster_widget_options.display = "embed";  
+      setster_widget_options.uri = "robbinsbrothers";
+      setster_widget_options.setsterURL = setsHost; 
+      setster_widget_options.container = "setster-wrapper";
+      setster_widget_options.defaultService = "55433"; 
+      setster_widget_options.defaultLocation = "30331"; 
+      setster_widget = new Setster.setster_widget(setster_widget_options);
+    }
+    </script>
+    <script type="text/javascript" charset="utf-8">
+     var script = document.createElement("script");
+     var setsHost = "https://www.setster.com/widget/";
+     script.src = setsHost + "js/setster_over.js?v=2";
+     script.type = "text/javascript";
+     var head = document.getElementsByTagName("head")[0];
+     head.appendChild(script);
+     script.onload = onLoad
+    </script>
+    <!-- End Setster Widget -->
+  </div>
+ </div>
   </body>
 </html>
