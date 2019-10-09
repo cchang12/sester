@@ -16,15 +16,15 @@
   <div id="setster-wrapper">
     <!-- Begin Setster Widget -->
     <script type="text/javascript" charset="utf-8">
-    var setster_widget;
+    var setster_widget_store;
     function onLoad() {
-      var setster_widget_options = {};
-      setster_widget_options.display = "embed";  
-      setster_widget_options.uri = "robbinsbrothers";
-      setster_widget_options.setsterURL = setsHost; 
-      setster_widget_options.container = "setster-wrapper";
-      setster_widget_options.defaultLocation = "30257|30258|30259|30260|30261|30262|30268|30269|30270|30271|30272|30273|30274|30275|30276"; 
-      setster_widget = new Setster.setster_widget(setster_widget_options);
+      var setster_widget_store_options = {};
+      setster_widget_store_options.display = "embed";  
+      setster_widget_store_options.uri = "robbinsbrothers";
+      setster_widget_store_options.setsterURL = setsHost; 
+      setster_widget_store_options.container = "setster-wrapper";
+      setster_widget_store_options.defaultLocation = "30257|30258|30259|30260|30261|30262|30268|30269|30270|30271|30272|30273|30274|30275|30276"; 
+      setster_widget_store = new Setster.setster_widget_store(setster_widget_store_options);
     }
     </script>
      <script type="text/javascript" charset="utf-8">
@@ -56,31 +56,9 @@
 
   
   <div id="setster-wrapper">
-      <!-- Begin Setster Widget - virtual appt -->
-    <script type="text/javascript" charset="utf-8">
-    var setster_widgetv;
-    function onLoad() {
-      var setster_widgetv_options = {};
-      setster_widgetv_options.display = "embed";  
-      setster_widgetv_options.uri = "robbinsbrothers";
-      setster_widgetv_options.setsterURL = setsHost; 
-      setster_widgetv_options.container = "setster-wrapper";
-      setster_widgetv_options.defaultService = "55433"; 
-      setster_widgetv_options.defaultLocation = "30331"; 
-      setster_widgetv = new Setster.setster_widgetv(setster_widgetv_options);
-    }
-    </script>
-    <script type="text/javascript" charset="utf-8">
-     var script = document.createElement("script");
-     var setsHost = "https://www.setster.com/widget/";
-     script.src = setsHost + "js/setster_over.js?v=2";
-     script.type = "text/javascript";
-     var head = document.getElementsByTagName("head")[0];
-     head.appendChild(script);
-     script.onload = onLoad
-    </script>
-    <!-- End Setster Widget -->
   </div>
+  
+  
  </div>
   </body>
 </html>
