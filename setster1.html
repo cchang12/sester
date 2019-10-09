@@ -13,44 +13,26 @@
 <div>
 <p>In-Store Appointment</p>
 <p>We’d love to set aside some time to address your needs.</p>
-
-
-
-<!-- Begin Setster Widget -->
 <script type="text/javascript" charset="utf-8">
-var setster_widgets;
+var setster_widget;
 function onLoad() {
-  var setster_widget_option = {};
-
-  setster_widget_option.display = "embed";  
-  setster_widget_option.uri = "robbinsbrothers";
-  setster_widget_option.setsterURL = setsHosts; 
-  setster_widget_option.container = "setster-wrapper";
-  setster_widget_option.defaultService = "55312|55315|55313|55314|55316"; 
-  setster_widget_option.defaultLocation = "30257|30258|30259|30260|30261|30262|30268|30269|30270|30271|30272|30273|30274|30275|30276"; 
-  setster_widgets = new Setster.setster_widgets(setster_widget_option);
-
+  var setster_widget_options = {};
+  setster_widget_options.display = "embed";  
+  setster_widget_options.uri = "robbinsbros";
+  setster_widget_options.setsterURL = setsHost; 
+  setster_widget_options.container = "setster-wrapper";
+  setster_widget_options.defaultLocation = "30321"; 
+  setster_widget_options.returnUrl = "https://www.robbinsbrothers.com/appointment-confirmation"; 
+  setster_widget = new Setster.setster_widget(setster_widget_options);
 }
 </script>
-<script type="text/javascript" charset="utf-8">
- var scripts = document.createElement("scripts");
- var setsHosts = "https://www.setster.com/widget/";
- scripts.src = setsHosts + "js/setster_over.js?v=2";
- scripts.type = "text/javascript";
- var heads = document.getElementsByTagName("heads")[0];
- heads.appendChild(scripts);
- scripts.onload = onLoad
-</script>
-<!-- End Setster Widget -->
-  
 
 </div>
-<br>
-<br>
-<br>
-<br>
 
-  
+<br>
+<br>
+<br>
+<br>
 
 <div>
 <p>Virtual Appointment</p>
