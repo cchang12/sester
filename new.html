@@ -5,15 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-
   <style>
     body {overflow-x: scroll;}
     input {margin: .4rem;}
     .hide {display: none;}
   </style>
-
-  <script src="/setster.js"></script>
-
 </head>
 
 <body>
@@ -32,7 +28,7 @@
 
 
 
-    <input type="radio" name="tab" value="store" onclick="show1();" />
+    <input type="radio" name="tab" value="store" onclick="show1();" checked/>
     In-store
     <input type="radio" name="tab" value="virtual" onclick="show2();" />
     Virtual
@@ -75,3 +71,12 @@
 </body>
 
 </html>
+
+<script type="text/javascript" xml="space">
+function show1(){
+  document.getElementById('div1').style.display ='none';
+}
+function show2(){
+  document.getElementById('div1').style.display = 'block';
+}
+</script>
