@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>body {overflow-x: scroll;}</style>
+
+</head>
+
+<body>
+  <div style="width: auto;text-align: center;margin: auto;">
+    <p><h1>Let's Make An Appointment</h1></p> <br>
+
+    <p>We offer both in-store and virtual appointment. Select the most convenient option for you:</p>
+
+    <p>Select Appointment Type:</p> In-Store Virtual
+
+    <p><b>In-Store Appointment</b></p>
+    <p>We’d love to set aside some time to address your needs. Please use the form below or call us at 800-295-1543 to schedule your personalized visit with us. We recommend you make your appointment at least three business days in advance and specify the items that you would like to see during your visit. Please note that the full Brilliant Earth collection may not be available for view at each location.</p>
+    <br>
+    <p>If you would like to schedule a virtual appointment with us, please <a href="https://cchang12.github.io/setster/virtual.html">click here.</a></p>
+    <div id="setster-wrapper">
+      <!-- Begin Setster Widget -->
+      <script type="text/javascript" charset="utf-8">
+      var setster_widget;
+      function onLoad() {
+        var setster_widget_options = {};
+        setster_widget_options.display = "embed";  
+        setster_widget_options.uri = "robbinsbrothers";
+        setster_widget_options.setsterURL = setsHost; 
+        setster_widget_options.container = "setster-wrapper";
+        setster_widget_options.defaultLocation = "30257|30258|30259|30260|30261|30262|30268|30269|30270|30271|30272|30273|30274|30275|30276"; 
+        setster_widget = new Setster.setster_widget(setster_widget_options);
+      }
+      </script>
+      <script type="text/javascript" charset="utf-8">
+       var script = document.createElement("script");
+       var setsHost = "https://www.setster.com/widget/";
+       script.src = setsHost + "js/setster_over.js?v=2";
+       script.type = "text/javascript";
+       var head = document.getElementsByTagName("head")[0];
+       head.appendChild(script);
+       script.onload = onLoad
+      </script>
+      <!-- End Setster Widget -->
+    </div> 
+  </div>
+</body>
+</html>
