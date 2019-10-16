@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <style>body {overflow-x: scroll;}</style>
+  <style>
+    body {overflow-x: scroll;}
+    input {margin: .4rem;}
+  /style>
 
 </head>
 
@@ -14,8 +17,15 @@
     <p><h1>Let's Make An Appointment</h1></p> <br>
 
     <p>We offer both in-store and virtual appointment. Select the most convenient option for you:</p>
-
-    <p>Select Appointment Type:</p> In-Store Virtual
+    <div>
+      <input type="radio" id="In-Store" name="appt" value="In-Store"
+             checked>
+      <label for="instore">In-Store</label>
+    </div>
+    <div>
+      <input type="radio" id="virtual" name="appt" value="virtual">
+      <label for="virtual">Virtual</label>
+    </div>
 
     <p><b>In-Store Appointment</b></p>
     <p>We’d love to set aside some time to address your needs. Please use the form below or call us at 800-295-1543 to schedule your personalized visit with us. We recommend you make your appointment at least three business days in advance and specify the items that you would like to see during your visit. Please note that the full Brilliant Earth collection may not be available for view at each location.</p>
