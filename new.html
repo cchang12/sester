@@ -15,68 +15,82 @@
 <body>
   <div style="width: auto;text-align: center;margin: auto;">
     <p><h1>Let's Make An Appointment</h1></p> <br>
-
     <p>We offer both in-store and virtual appointment. Select the most convenient option for you:</p>
-    <div>
-      <input type="radio" id="In-Store" name="appt" value="In-Store" checked>
-      <label for="instore">In-Store</label>
-    </div>
-    <div>
-      <input type="radio" id="virtual" name="appt" value="virtual">
-      <label for="virtual">Virtual</label>
-    </div>
-
-
-
     <input type="radio" name="tab" value="store" onclick="show1();" checked/>
     In-store
     <input type="radio" name="tab" value="virtual" onclick="show2();" />
     Virtual
-    <div id="div1" class="hide">
-    hello
+
+    <div id="div1">
+      <p><b>In-Store Appointment</b></p>
+      <p>We’d love to set aside some time to address your needs. Schedule an appointment with us and we look forward to provide the best in-class experience at one of our 15 locations.</p>
+      <div id="setster-wrapper">
+        <!-- Begin Setster Widget -->
+        <script type="text/javascript" charset="utf-8">
+        var setster_widget;
+        function onLoad() {
+          var setster_widget_options = {};
+          setster_widget_options.display = "embed";  
+          setster_widget_options.uri = "robbinsbrothers";
+          setster_widget_options.setsterURL = setsHost; 
+          setster_widget_options.container = "setster-wrapper";
+          setster_widget_options.defaultLocation = "30257|30258|30259|30260|30261|30262|30268|30269|30270|30271|30272|30273|30274|30275|30276"; 
+          setster_widget = new Setster.setster_widget(setster_widget_options);
+        }
+        </script>
+        <script type="text/javascript" charset="utf-8">
+         var script = document.createElement("script");
+         var setsHost = "https://www.setster.com/widget/";
+         script.src = setsHost + "js/setster_over.js?v=2";
+         script.type = "text/javascript";
+         var head = document.getElementsByTagName("head")[0];
+         head.appendChild(script);
+         script.onload = onLoad
+        </script>
+        <!-- End Setster Widget -->
+      </div>
     </div>
 
-
-
-    <p><b>In-Store Appointment</b></p>
-    <p>We’d love to set aside some time to address your needs. Please use the form below or call us at 800-295-1543 to schedule your personalized visit with us. We recommend you make your appointment at least three business days in advance and specify the items that you would like to see during your visit. Please note that the full Brilliant Earth collection may not be available for view at each location.</p>
-    <br>
-    <p>If you would like to schedule a virtual appointment with us, please <a href="https://cchang12.github.io/setster/virtual.html">click here.</a></p>
-    <div id="setster-wrapper">
-      <!-- Begin Setster Widget -->
-      <script type="text/javascript" charset="utf-8">
-      var setster_widget;
-      function onLoad() {
-        var setster_widget_options = {};
-        setster_widget_options.display = "embed";  
-        setster_widget_options.uri = "robbinsbrothers";
-        setster_widget_options.setsterURL = setsHost; 
-        setster_widget_options.container = "setster-wrapper";
-        setster_widget_options.defaultLocation = "30257|30258|30259|30260|30261|30262|30268|30269|30270|30271|30272|30273|30274|30275|30276"; 
-        setster_widget = new Setster.setster_widget(setster_widget_options);
-      }
-      </script>
-      <script type="text/javascript" charset="utf-8">
-       var script = document.createElement("script");
-       var setsHost = "https://www.setster.com/widget/";
-       script.src = setsHost + "js/setster_over.js?v=2";
-       script.type = "text/javascript";
-       var head = document.getElementsByTagName("head")[0];
-       head.appendChild(script);
-       script.onload = onLoad
-      </script>
-      <!-- End Setster Widget -->
-    </div> 
+    <div id="div2" class="hide">
+      <p><b>Virtual Appointment</b></p>
+      <p>Your time is valuable—we totally get it—which is why we offer a Virtual Shopping Experience as an extended service to you. Through a Virtual Shopping Experience, you’ll interact with a Robbins Brothers Design Specialist in a live video chat. You’ll get the answer to any and all questions you may have on engagement rings or diamonds. Yes, it’s like making a visit to our store – because that’s what it is. Fun, easy and convenient. You can see us, but we can't see you. Unless of course you want us to! You don't need a camera to enjoy this, just an internet connection and a device to view.</p>
+      <p>Phone: 800-295-1543 Virtual Store Hours: (Pacific Time)  Mon - Fri: 9 AM - 6 PM</p>
+      <div id="setster-wrapper">
+        <!-- Begin Setster Widget -->
+        <script type="text/javascript" charset="utf-8">
+        var setster_widget;
+        function onLoad() {
+          var setster_widget_options = {};
+          setster_widget_options.display = "embed";  
+          setster_widget_options.uri = "robbinsbrothers";
+          setster_widget_options.setsterURL = setsHost; 
+          setster_widget_options.container = "setster-wrapper";
+          setster_widget_options.defaultService = "55312|55315|55450|55451|55316"; 
+          setster_widget_options.defaultLocation = "30331"; 
+          setster_widget = new Setster.setster_widget(setster_widget_options);
+        }
+        </script>
+        <script type="text/javascript" charset="utf-8">
+         var script = document.createElement("script");
+         var setsHost = "https://www.setster.com/widget/";
+         script.src = setsHost + "js/setster_over.js?v=2";
+         script.type = "text/javascript";
+         var head = document.getElementsByTagName("head")[0];
+         head.appendChild(script);
+         script.onload = onLoad
+        </script>
+        <!-- End Setster Widget -->
+      </div>
+    </div>
   </div>
 </body>
-
 </html>
 
 <script type="text/javascript" xml="space">
-function show1(){
-  document.getElementById('div1').style.display ='none';
-}
-function show2(){
-  document.getElementById('div1').style.display = 'block';
-}
+  function show1(){
+    document.getElementById('div1').style.display ='block';
+  }
+  function show2(){
+    document.getElementById('div2').style.display ='block';
+  }
 </script>
