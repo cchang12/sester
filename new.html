@@ -1,100 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
 </head>
 
+
 <body style="overflow-x: scroll">
-  <div style="width:auto; text-align:center; margin:100px;">
-    <h1>Let's Make An Appointment</h1>
-    <p>We offer both in-store and virtual appointment. Select the most convenient option for you:</p>
 
-    <div style="font-size:18px;">
-      <input type="radio" name="tab" value="store" onclick="show1();" checked/>
-      In-store
-      <input type="radio" name="tab" value="virtual" onclick="show2();" />
-      Virtual
-    </div><br>
+<section class="hero"><img class="img-hero-diamond-brand img-w100" src="https://s7d5.scene7.com/is/image/RobbinsBros/Appointment?scl=1" alt="in-store appointment"></section>
 
-    <!-- In-Store -->
-    <div id="div1">
-      <h2>In-Store Appointment</h2>
-      <p>We’d love to set aside some time to address your needs. Schedule an appointment with us and we look forward to provide the best in-class experience at one of our 15 locations.</p>
-      <div id="setster-wrapper">
-        <!-- Begin Setster Widget -->
-        <script type="text/javascript" charset="utf-8">
-        var setster_widget;
-        function onLoad() {
-          var setster_widget_options = {};
-          setster_widget_options.display = "embed";  
-          setster_widget_options.uri = "robbinsbrothers";
-          setster_widget_options.setsterURL = setsHost; 
-          setster_widget_options.container = "setster-wrapper";
-          setster_widget_options.defaultLocation = "30257|30258|30259|30260|30261|30262|30268|30269|30270|30271|30272|30273|30274|30275|30276"; 
-          setster_widget = new Setster.setster_widget(setster_widget_options);
-        }
-        </script>
-        <script type="text/javascript" charset="utf-8">
-         var script = document.createElement("script");
-         var setsHost = "https://www.setster.com/widget/";
-         script.src = setsHost + "js/setster_over.js?v=2";
-         script.type = "text/javascript";
-         var head = document.getElementsByTagName("head")[0];
-         head.appendChild(script);
-         script.onload = onLoad
-        </script>
-        <!-- End Setster Widget -->
-      </div>
-    </div>
+<section>
+<div style="width:auto; text-align:center;">
+<h1>Let's Make An Appointment</h1>
+<p>We offer both in-store and virtual appointment. Select the most convenient option for you:</p>
 
-    <!-- Virtual -->
-    <div id="div2" style="display:none">
-      <h2>Virtual Appointment</h2>
-      <p>Your time is valuable—we totally get it—which is why we offer a Virtual Shopping Experience as an extended service to you. Through a Virtual Shopping Experience, you’ll interact with a Robbins Brothers Design Specialist in a live video chat. You’ll get the answer to any and all questions you may have on engagement rings or diamonds. Yes, it’s like making a visit to our store – because that’s what it is. Fun, easy and convenient. You can see us, but we can't see you. Unless of course you want us to! You don't need a camera to enjoy this, just an internet connection and a device to view.</p>
-      <p>Phone: 800-295-1543 Virtual Store Hours: (Pacific Time)  Mon - Fri: 9 AM - 6 PM</p>
-      <div id="setster-wrapper">
-        <!-- Begin Setster Widget -->
-        <script type="text/javascript" charset="utf-8">
-        var setster_widget1;
-        function onLoad1() {
-          var setster_widget_options1 = {};
-          setster_widget_options1.display = "embed";  
-          setster_widget_options1.uri = "robbinsbrothers";
-          setster_widget_options1.setsterURL = setsHost1; 
-          setster_widget_options1.container = "setster-wrapper";
-          setster_widget_options1.defaultService = "55312|55315|55450|55451|55316"; 
-          setster_widget_options1.defaultLocation = "30331"; 
-          setster_widget1 = new Setster.setster_widget1(setster_widget_options1);
-        }
-        </script>
-        <script type="text/javascript" charset="utf-8">
-         var script1 = document.createElement("script1");
-         var setsHost1 = "https://www.setster.com/widget/";
-         script1.src = setsHost1 + "js/setster_over.js?v=2";
-         script1.type = "text/javascript";
-         var head1 = document.getElementsByTagName("head1")[0];
-         head1.appendChild(script1);
-         script1.onload = onLoad1
-        </script>
-        <!-- End Setster Widget -->
-      </div>
-    </div>
-  </div>
+<div style="font-size:18px;">
+  <input type="radio" name="tab" value="store" onclick="show1();" checked="">
+  In-store
+  <input type="radio" name="tab" value="virtual" onclick="show2();">
+  Virtual
+</div><br>
+
+<div id="div1" style="display: block;">
+  <h2>In-Store Appointment</h2>
+  <p>We’d love to set aside some time to address your needs. Schedule an appointment with us and we look forward to provide the best in-class experience at one of our 15 locations.</p>
+  <div id="setster-widget-in-store"></div>
+</div>
+
+<div id="div2" style="display: none;">
+  <h2>Virtual Appointment</h2>
+  <p>Your time is valuable—we totally get it—which is why we offer a Virtual Shopping Experience as an extended service to you. Through a Virtual Shopping Experience, you’ll interact with a Robbins Brothers Design Specialist in a live video chat. You’ll get the answer to any and all questions you may have on engagement rings or diamonds. Yes, it’s like making a visit to our store – because that’s what it is. Fun, easy and convenient. You can see us, but we can't see you. Unless of course you want us to! You don't need a camera to enjoy this, just an internet connection and a device to view.</p>
+  <p>Phone: 800-295-1543 Virtual Store Hours: (Pacific Time) Mon - Fri: 9 AM - 6 PM</p>
+  <div id="setster-widget-virtual"></div>
+</div>
 
 <script type="text/javascript" xml="space">
   function show1(){
     document.getElementById('div1').style.display ='block';
     document.getElementById('div2').style.display ='none';
+    loadInStoreWidget();
   }
   function show2(){
     document.getElementById('div1').style.display ='none';
     document.getElementById('div2').style.display ='block';
+    loadVirtualWidget();
   }
 </script>
 
+<script type="text/javascript" charset="utf-8">
+  var setster_widget_in_store = null;
+  var setster_widget_virtual = null;
+  function loadInStoreWidget() {
+    if (setster_widget_in_store === null) {
+      var setster_widget_options = {};
+      setster_widget_options.display = "embed";
+      setster_widget_options.uri = "robbinsbrothers";
+      setster_widget_options.setsterURL = setsHost;
+      setster_widget_options.defaultLocation = "30257|30258|30259|30260|30261|30262|30268|30269|30270|30271|30272|30273|30274|30275|30276"; 
+      setster_widget_options.container = "setster-widget-in-store";
+      setster_widget_in_store = new Setster.setster_widget(setster_widget_options);
+    }
+  }
+  function loadVirtualWidget() {
+    if (setster_widget_virtual === null) {
+      var setster_widget_options = {};
+      setster_widget_options.display = "embed";
+      setster_widget_options.uri = "robbinsbrothers";
+      setster_widget_options.setsterURL = setsHost;
+      setster_widget_options.container = "setster-widget-virtual";
+      setster_widget_options.defaultService = "55312|55315|55450|55451|55316";
+      setster_widget_options.defaultLocation = "30331";
+      setster_widget_virtual = new Setster.setster_widget(setster_widget_options);
+    }
+  }
+  function onLoad() {loadInStoreWidget();}
+</script>
+<script type="text/javascript" charset="utf-8">
+  var script = document.createElement("script");
+  var setsHost = "https://www.setster.com/widget/";
+  script.src = setsHost + "js/setster_over.js?v=2";
+  script.type = "text/javascript";
+  var head = document.getElementsByTagName("head")[0];
+  head.appendChild(script);
+  script.onload = onLoad
+</script>
+
+</section>
+
 </body>
 </html>
-
