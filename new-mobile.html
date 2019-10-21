@@ -10,69 +10,55 @@
 <section>
 <div style="width:auto; text-align:center;">
 <h1>Let's Make An Appointment</h1>
-<p>We offer both in-store and virtual appointment. Select the most convenient option for you:</p>
+<p>We offer both in-store and virtual appointment. Select the most convenient option for you:</p><br>
 
-<div style="font-size:18px;">
-  <input type="radio" name="tab" value="store" onclick="show1();" checked="">
-  In-store
-  <input type="radio" name="tab" value="virtual" onclick="show2();">
-  Virtual
-</div><br>
 
-<div id="div1" style="display: block;">
+<div id="div1">
   <h2>In-Store Appointment</h2>
   <p>We’d love to set aside some time to address your needs. Schedule an appointment with us and we look forward to provide the best in-class experience at one of our 15 locations.</p>
-  <div id="setster-widget-in-store"></div>
-</div>
+  <a href="javascript:;" class="btn btn-pink" onclick="setster_widget_in_store_m.show(); return false;">Make an In-Store Appointment</a>
+</div> <br><br>
 
-<div id="div2" style="display: none;">
+<div id="div2">
   <h2>Virtual Appointment</h2>
   <p>Your time is valuable—we totally get it—which is why we offer a Virtual Shopping Experience as an extended service to you. Through a Virtual Shopping Experience, you’ll interact with a Robbins Brothers Design Specialist in a live video chat. You’ll get the answer to any and all questions you may have on engagement rings or diamonds. Yes, it’s like making a visit to our store – because that’s what it is. Fun, easy and convenient. You can see us, but we can't see you. Unless of course you want us to! You don't need a camera to enjoy this, just an internet connection and a device to view.</p>
   <p>Phone: 800-295-1543 Virtual Store Hours: (Pacific Time) Mon - Fri: 9 AM - 6 PM</p>
-  <div id="setster-widget-virtual"></div>
+  <a href="javascript:;" class="btn btn-pink" onclick="setster_widget_virtual_m.show(); return false;">Make a Virtual Appointment</a>
 </div>
 
-<script type="text/javascript" xml="space">
-  function show1(){
-    document.getElementById('div1').style.display ='block';
-    document.getElementById('div2').style.display ='none';
-    loadInStoreWidget();
-  }
-  function show2(){
-    document.getElementById('div1').style.display ='none';
-    document.getElementById('div2').style.display ='block';
-    loadVirtualWidget();
-  }
-</script>
-
 <script type="text/javascript" charset="utf-8">
-  var setster_widget_in_store = null;
-  var setster_widget_virtual = null;
-  function loadInStoreWidget() {
-    if (setster_widget_in_store === null) {
+  var setster_widget_in_store_m = null;
+  var setster_widget_virtual_m = null;
+  function loadInStoreWidgetm() {
+    if (setster_widget_in_store_m === null) {
       var setster_widget_options = {};
-      setster_widget_options.display = "embed";
+      setster_widget_options.display = "overlay";  
       setster_widget_options.uri = "robbinsbrothers";
+      setster_widget_options.placement = "hidden";  
+      setster_widget_options.buttonName = "Appointment";
       setster_widget_options.setsterURL = setsHost;
       setster_widget_options.defaultLocation = "30257|30258|30259|30260|30261|30262|30268|30269|30270|30271|30272|30273|30274|30275|30276"; 
-      setster_widget_options.container = "setster-widget-in-store";
-      setster_widget_in_store = new Setster.setster_widget(setster_widget_options);
+      setster_widget_options.container = "setster-widget-in-store-m";
+      setster_widget_in_store_m = new Setster.setster_widget(setster_widget_options);
     }
   }
-  function loadVirtualWidget() {
-    if (setster_widget_virtual === null) {
+  function loadVirtualWidgetm() {
+    if (setster_widget_virtual_m === null) {
       var setster_widget_options = {};
-      setster_widget_options.display = "embed";
+      setster_widget_options.display = "overlay";  
       setster_widget_options.uri = "robbinsbrothers";
+      setster_widget_options.placement = "hidden";  
+      setster_widget_options.buttonName = "Appointment";
       setster_widget_options.setsterURL = setsHost;
-      setster_widget_options.container = "setster-widget-virtual";
+      setster_widget_options.container = "setster-widget-virtual-m";
       setster_widget_options.defaultService = "55312|55315|55450|55451|55316";
       setster_widget_options.defaultLocation = "30331";
-      setster_widget_virtual = new Setster.setster_widget(setster_widget_options);
+      setster_widget_virtual_m = new Setster.setster_widget(setster_widget_options);
     }
   }
-  function onLoad() {loadInStoreWidget();}
+  function onLoad() {loadInStoreWidgetm();}
 </script>
+
 <script type="text/javascript" charset="utf-8">
   var script = document.createElement("script");
   var setsHost = "https://www.setster.com/widget/";
@@ -82,7 +68,6 @@
   head.appendChild(script);
   script.onload = onLoad
 </script>
-
 </section>
 
 </body>
