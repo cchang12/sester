@@ -1,0 +1,868 @@
+<body>
+<div class="col-xs-12 container">
+	<h1 class="appointment-header-title">Let’s Make An Appointment</h1>
+	<p class="appointment-header-copy">We’d love to set aside some time to address your needs.</p>
+	<p class="appointment-header-copy">* Required information.</p>
+	<div class="errorsFound block-hidden color-red">Error: Missing or Incorrect Information.  Please make sure all required information has been entered and is correct.</div>
+</div>
+<form id="form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+<!-- <form id="form" action="https://test.com" method="POST"> -->
+	<!--  -----------------------------------------------------------------------------------------------	-->
+	<!--  NOTE: These fields are optional debugging elements. Please uncomment								-->
+	<!--  these lines if you wish to test in debug mode.													-->
+	<!--  <input type="hidden" name="debug" value=1>														-->
+	<!--  <input type="hidden" name="debugEmail" value="azoutis@robbinsbrothers.com">						-->
+	<!--  -----------------------------------------------------------------------------------------------	-->
+
+
+	<input type=hidden name="oid" value="00D1a000000ZD22"><!--Production Org ID-->
+	<input type=hidden name="retURL" value="https://www.robbinsbrothers.com/appointment-confirmation"><!--Redirect URL-->
+	<input type=hidden name="company" id="company" value="New Guest"/><!--Lead Company Default Value-->
+	<input type=hidden name="00N1a000007134t" id="00N1a000007134t" value="CSF"><!--Form Type Default Value-->
+	<input type=hidden name="00N1a000007135J" id="00N1a000007135J" value="NEW-CUST"><!--Visitor Type Default Value-->
+	<input type=hidden name="00N1a000007134o" id="00N1a000007134o" value="Initiated (in process)"><!--E-From Status Default Value-->
+	<input type=hidden name="rating" id="rating" value="Hot"><!--Rating Default Value-->
+	<input type=hidden name="lead_source" id="lead_source" value="Web Appointment"><!--Guest Source Default Value-->
+	<input type=hidden name="00N1a0000071354" id="00N1a0000071354" value="0"><!--Default Party Size-->
+	<input type=hidden name="00N1a000008ZJ3M" id="00N1a000008ZJ3M" value=""><!--Product SKU Reference-->
+	<input type=hidden name="00N1a000008ZJ3N" id="00N1a000008ZJ3N" value=""><!--Product URL Reference-->
+	<input type=hidden name="00N1a000007134z" id="00N1a000007134z" value=""><!--This field is used to concantenate the date time in to one value "MM/DD/YYYY HH:MM AM|PM"-->
+
+	<!-- Row for Location DropDown and Contact Info -->
+	<div>
+		<!-- Select a Location -->
+		<div class="col-sm-5 col-xs-12">
+			<!--Web to Lead Store ID:<input  id="00N1a000007135K" maxlength="20" name="00N1a000007135K" size="20" type="text" /><br>-->
+			<!--Keep the values the as is. I updated the the UI name to match with the current online store location list-->
+
+<div style="font-size:18px;">
+  <input type="radio" name="tab" value="store" onclick="show1();" checked="">
+  In-store
+  <input type="radio" name="tab" value="virtual" onclick="show2();">
+  Virtual
+  <p>virtual appointment description...........</p>
+</div>
+			<!-- Location DropDown -->
+			<div class="location-dropdown" id="div1" style="display: block;">
+				<h2 class="size-24" id="selectlocation">Select a Location*</h2>
+				<div id="locationDropdownValidation" class="block-hidden color-red">Please Select a Valid Store Location</div>
+				<select data-val="true" data-val-required="The Location field is required." id="00N1a000007135K" name="00N1a000007135K" title="Store Location" required>
+			<option value="default"></option>
+			<option value="a0C1a0000032sGE">Scottsdale, AZ</option>
+			<option value="a0C1a0000032sFf">Costa Mesa, CA</option>
+			<option value="a0C1a000002EQmc">Fullerton, CA</option>
+			<option value="a0C1a0000032sFz">Glendale, CA</option>
+			<option value="a0C1a0000032sFk">Montclair, CA</option>
+			<option value="a0C1a0000032sG4">Riverside, CA</option>
+			<option value="a0C1a0000032sGT">San Diego, CA</option>
+			<option value="a0C1a0000032sGY">Torrance, CA</option>
+			<option value="a0C1a0000032sFG">Woodland Hills, CA</option>
+			<option value="a0C1a0000032sFp">Arlington, TX</option>
+			<option value="a0C1a0000032sFa">Dallas, TX</option>
+			<option value="a0C1a0000032sG9">Houston / Clearlake, TX</option>
+			<option value="a0C1a000002ETWl">Houston / Loop, TX</option>
+			<option value="a0C1a0000032sGO">Bellevue, WA</option>
+			<option value="a0C1a0000032sGJ">Seattle, WA</option>
+				</select>
+			</div><!-- /Location DropDown -->
+
+			<!-- Location DropDown -->
+			<div class="location-dropdown" id="div2" style="display: none;">
+				<h2 class="size-24" id="selectlocation">Select a Location*</h2>
+				<div id="locationDropdownValidation" class="block-hidden color-red">Please Select a Valid Store Location</div>
+				<select data-val="true" data-val-required="The Location field is required." id="00N1a000007135K" name="00N1a000007135K" title="Store Location" required>
+			<option value="default"></option>
+			<option value="a0C1a0000032sFL">Virtual Appointment</option>
+				</select>
+			</div><!-- /Location DropDown -->
+
+<script type="text/javascript" xml="space">
+  function show1(){
+    document.getElementById('div1').style.display ='block';
+    document.getElementById('div2').style.display ='none';
+  }
+  function show2(){
+    document.getElementById('div1').style.display ='none';
+    document.getElementById('div2').style.display ='block';
+  }
+</script>
+
+			<!-- DropDown Physical Store Info -->
+			<!-- Virtual Store -->
+			<div class="row store-info-container store-virtual store-hidden">
+				<div class="col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p>You can see us, but we can't see you. Unless of course you want us to! You don't need a camera to enjoy this, just an internet connection and a device to view.</p><br>
+						<p>Please note, it may take us up to an hour to prepare for a virtual appointment. We appreciate your patience. We look forward to connecting with you as soon as we can.</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 800-295-1543</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Virtual Store Hours:</strong> (Pacific Time)</p>
+						<p>Mon - Fri: 11 AM - 6 PM</p>
+					</div>
+				</div>
+			</div><!-- /Virtual Store -->
+
+			<!-- Arlington -->
+			<div class="row store-info-container store-arlington store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/Arlington-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>127 E I-20 Hwy.</p>
+						<p>Arlington, TX 76018</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 817-466-2860</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon - Fri: 10 AM - 8 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12 PM - 6 PM</p>
+					</div>
+				</div>
+			</div><!-- /Arlington -->
+
+			<!-- Bellevue -->
+			<div class="row store-info-container store-bellevue store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/Bellevue-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>33 Bellevue Way NE.</p>
+						<p>Bellevue, WA 98004</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 425-635-7464</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon -Thu: 10 AM -7 PM</p>
+                                                 <p>Friday: 10 AM -8 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12 PM - 5 PM</p>
+					</div>
+				</div>
+			</div><!-- /Bellevue -->
+
+			<!-- Costa Mesa -->
+			<div class="row store-info-container store-costa-mesa store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/CostaMesa-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>3802 S. Bristol Street</p>
+						<p>Santa Ana, CA 92704</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 714-352-3479</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon - Fri: 11 AM - 8 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12 PM - 6 PM</p>
+					</div>
+				</div>
+			</div><!-- /Costa Mesa -->
+
+			<!-- Dallas -->
+			<div class="row store-info-container store-dallas store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/Dallas-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>14080 Dallas Pkwy.</p>
+						<p>Dallas, TX 75240</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 972-385-0614</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon - Fri: 10 AM - 8 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12 PM - 6 PM</p>
+					</div>
+				</div>
+			</div><!-- /Dallas -->
+
+			<!-- Fullerton -->
+			<div class="row store-info-container store-fullerton store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/Fullerton-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>255 West Orangethorpe Ave.</p>
+						<p>Fullerton, CA 92832</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 714-871-5000</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon - Fri: 11 AM - 8 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12 AM - 6 PM</p>
+					</div>
+				</div>
+			</div><!-- /Fullerton -->
+
+			<!-- Glendale -->
+			<div class="row store-info-container store-glendale store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/Glendale-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>300 W. Colorado Street</p>
+						<p>Glendale, CA 91204</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 818-956-5067</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon - Fri: 11 AM - 8 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12 PM - 6 PM</p>
+					</div>
+				</div>
+			</div><!-- /Glendale -->
+
+			<!-- Houston / Clearlake -->
+			<div class="row store-info-container store-houston-clearlake store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/HoustonC-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>1251 W Bay Area Blvd</p>
+						<p>Webster, TX 77598</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 281-557-3160</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon - Fri: 10 AM - 8 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12 PM - 6 PM</p>
+					</div>
+				</div>
+			</div><!-- /Houston / Clearlake -->
+
+			<!-- Houston / Loop -->
+			<div class="row store-info-container store-houston-loop store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/HoustonL-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>2101 West Loop South</p>
+						<p>Houston, TX 77027</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 713-961-0011</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon - Fri: 10 AM - 8 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12 PM - 6 PM</p>
+					</div>
+				</div>
+			</div><!-- /Houston / Loop -->
+
+			<!-- Montclair -->
+			<div class="row store-info-container store-montclair store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/Montclair-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>5275 Moreno St.</p>
+						<p>Montclair, CA 91763</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 909-621-4842</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon - Fri: 10 AM - 8 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12 PM - 6 PM</p>
+					</div>
+				</div>
+			</div><!-- /Riverside -->
+
+			<!-- Riverside -->
+			<div class="row store-info-container store-riverside store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/Riverside-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>3775 Tyler St. Space 1A</p>
+						<p>Riverside, CA 92503</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 951-785-9064</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon - Fri: 11 AM - 8 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12PM - 6 PM</p>
+					</div>
+				</div>
+			</div><!-- /Riverside -->
+
+			<!-- San Diego -->
+			<div class="row store-info-container store-san-diego store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/SanDiego-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>7717 Friars Road</p>
+						<p>San Diego, CA 92108</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 619-543-0525</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon - Fri: 10 AM - 8 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12 PM - 6 PM</p>
+					</div>
+				</div>
+			</div><!-- /San Diego -->
+
+			<!-- Scottsdale -->
+			<div class="row store-info-container store-scottsdale store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/Scottsdale-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>7435 E. Frank Lloyd Wright Blvd</p>
+						<p>Scottsdale, AZ 85260</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 800-610-7464</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon - Fri: 11 AM - 8 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12 PM - 5 PM</p>
+					</div>
+				</div>
+			</div><!-- /Scottsdale -->
+
+			<!-- Seattle -->
+			<div class="row store-info-container store-seattle store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/Seattle-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>2200 First Avenue</p>
+						<p>Seattle, WA 98121</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 206-826-7464</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon - Fri: 11 AM - 7 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12 PM - 5 PM</p>
+					</div>
+				</div>
+			</div><!-- /Seattle -->
+
+			<!-- Torrance -->
+			<div class="row store-info-container store-torrance store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/Torrance-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>21200 Hawthorne Blvd.</p>
+						<p>Torrance, CA 90503</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 310-540-5659</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon - Fri: 10 AM - 8 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12 PM - 6 PM</p>
+					</div>
+				</div>
+			</div><!-- /Torrance -->
+
+			<!-- Woodland Hills -->
+			<div class="row store-info-container store-woodland-hills store-hidden">
+				<div class="col-md-6 col-xs-12 store-info-img pull-right">
+					<img src="https://s7d5.scene7.com/is/image/RobbinsBros/WoodlandH-mobile" class="img-responsive">
+				</div>
+				<div class="col-md-6 col-xs-12 store-info-wrap">
+					<div class="store-info-address">
+						<p><strong>Address:</strong></p>
+						<p>6645 Topanga Canyon Blvd.</p>
+						<p>Woodland Hills, CA 91303</p>
+					</div>
+					<div class="store-info-phone">
+						<p><strong>Phone:</strong> 818-340-3314</p>
+					</div>
+					<div class="store-info-hours">
+						<p><strong>Store Hours:</strong></p>
+						<p>Mon - Fri: 11 AM - 8 PM</p>
+						<p>Saturday: 11 AM - 7 PM</p>
+						<p>Sunday: 12 PM - 6 PM</p>
+					</div>
+				</div>
+			</div><!-- /Woodland Hills -->
+		</div><!-- /Select a Location -->
+
+		<!-- Vertical Divider -->
+		<div class="col-sm-2 hidden-xs vertical-divider">
+			<img src="https://s7d5.scene7.com/is/image/RobbinsBros/rule-graphic?scl=1" class="img-responsive center-block" alt="Image">
+		</div><!-- /Vertical Divider -->
+
+		<!-- Contact Information -->
+		<div class="col-sm-5 col-xs-12">
+			<div class="contact-info">
+				<h2 class="size-24">Contact Information</h2>
+				<div class="salutation-dropdown">
+					<select data-val="true" id="salutation" name="salutation" title="Salutation">
+						<option value="">Select a Salutation...</option>
+						<option value="Mr.">Mr.</option>
+						<option value="Mrs.">Mrs.</option>
+						<option value="Miss">Miss</option>
+						<option value="Ms.">Ms.</option>
+					</select>
+				</div>
+				<div class="contact-info-fields">
+					<div id="firstNameValidation" class="block-hidden color-red">Please Enter a Valid First Name</div>
+					<input id="first_name" maxlength="40" name="first_name" placeholder="First Name*" size="20" type="text" /><br>
+					<div id="lastNameValidation" class="block-hidden color-red">Please Enter a Valid Last Name</div>
+					<input id="last_name" maxlength="80" name="last_name" placeholder="Last Name*" size="20" type="text" /><br>
+					<div id="phoneValidation" class="block-hidden color-red">Please Enter a Valid Phone Number</div>
+					<input id="mobile" maxlength="40" name="mobile" placeholder="Cell Phone*" size="20" type="tel" /><br>
+					<div id="emailValidation" class="block-hidden color-red">Please Enter a Valid Email Address</div>
+					<input id="email" maxlength="80" name="email" placeholder="Email*" size="20" type="email" /><br>
+				</div>
+			</div>
+		</div><!-- /Contact Information -->
+	</div><!-- /Row for Location DropDown and Contact Info -->
+
+	<div class="clearfix"></div>
+
+	<!-- Row for Date/Time and More Info -->
+	<div>
+
+		<!-- Date and Time -->
+		<div class="col-sm-5 col-xs-12">
+			<div>
+				<h2 class="size-24">Preferred Date and Time*</h2>
+				<p>We’re ready when you are - make your selection below.  For same-day appointments, please call <a href="tel:8002951543" class="corp-phone">(800) 295-1543</a>.</p>
+				<p class="size-13">Please note all times are in Pacific Standard Time (PST).</p>
+			</div>
+			<div class="col-sm-6 col-xs-12 contact-date">
+				<input id="date" name="date" size="12" type="text" placeholder="Date" />
+				<p id="dateValidation" class="block-hidden color-red">Please Enter a Valid Date</p>
+			</div>
+
+
+			<div class="col-sm-6 col-xs-12 contact-time">
+				<select id="time" name="time" title="Online Appointment Time" required>
+					<option value="default">Select Time...</option>
+					<option value="11:00 AM">11:00 AM</option>
+					<option value="11:30 AM">11:30 AM</option>
+					<option value="12:00 PM">12:00 PM</option>
+					<option value="12:30 PM">12:30 PM</option>
+					<option value="1:00 PM">1:00 PM</option>
+					<option value="1:30 PM">1:30 PM</option>
+					<option value="2:00 PM">2:00 PM</option>
+					<option value="2:30 PM">2:30 PM</option>
+					<option value="3:00 PM">3:00 PM</option>
+					<option value="3:30 PM">3:30 PM</option>
+					<option value="4:00 PM">4:00 PM</option>
+					<option value="4:30 PM">4:30 PM</option>
+					<option value="5:00 PM">5:00 PM</option>
+					<option value="5:30 PM">5:30 PM</option>
+					<option value="6:00 PM">6:00 PM</option>
+					<option value="6:30 PM">6:30 PM</option>
+					<option value="7:00 PM">7:00 PM</option>
+					<option value="7:30 PM">7:30 PM</option>
+				</select>
+				<p id="timeValidation" class="block-hidden color-red">Please Enter a Valid Time</p>
+			</div>
+
+
+
+
+
+
+
+
+
+
+		</div>
+
+		<!-- Vertical Divider -->
+		<div class="col-sm-2 hidden-xs vertical-divider">
+			<img src="https://s7d5.scene7.com/is/image/RobbinsBros/rule-graphic?scl=1" class="img-responsive center-block" alt="Image">
+		</div><!-- /Vertical Divider -->
+
+		<!-- More Info About Visit -->
+		<div class="col-sm-5 col-xs-12">
+			<div class="reason-section">
+				<h2 class="size-24">More About Your Visit</h2>
+				<p>If you have specific questions, give us a heads-up so we’re ready when you arrive.</p>
+				<div>
+					<div id="reasonDropdownValidation" class="block-hidden color-red">Please Select a Valid Reason</div>
+					<p class="reason-section-title">Reason For Visit*</p>
+					<select id="00N1a000008kEOX" name="00N1a000008kEOX" title="Reason For Visit">
+						<option value="default">Select a Reason</option>
+						<option value="Engagement">Engagement</option>
+						<option value="Wedding">Wedding</option>
+						<option value="Repair">Repair</option>
+						<option value="Gift">Gift</option>
+						<option value="Anniversary">Anniversary</option>
+						<option value="Birthday">Birthday</option>
+						<option value="Holiday">Holiday</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+			</div>
+			<div class="comments-section">
+				<p>Comments:</p>
+				<textarea  id="00N1a000007135I" name="00N1a000007135I" type="text" class="form-control" wrap="soft" rows="10"></textarea>
+			</div>
+			<div>
+				<!--Birthdate:<span class="dateInput dateOnlyInput"><input  id="00N1a000007134Z" name="00N1a000007134Z" size="12" type="text" /></span><br>
+				Party Size:<input  id="00N1a0000071354" name="00N1a0000071354" size="20" type="text" /><br>
+				Proposal Date:<span class="dateInput dateOnlyInput"><input  id="00N1a0000071358" name="00N1a0000071358" size="12" type="text" /></span><br>
+				Perfect Price:<input  id="00N1a0000071356" name="00N1a0000071356" size="20" type="text" /><br>
+				Wedding Date:<span class="dateInput dateOnlyInput"><input  id="00N1a000007135M" name="00N1a000007135M" size="12" type="text" /></span><br>-->
+			</div>
+		</div><!-- /More Info About Visit -->
+	</div><!-- /Row for Date/Time and More Info -->
+
+	<!-- Row for Location DropDown and Contact Info -->
+	<div>
+		<div class="col-xs-12 text-center recaptcha-wrap">
+			<div id="captchaValidation" class="block-hidden color-red">Please Validate the reCAPTCHA</div>
+			<div class="g-recaptcha" data-sitekey="6LfNqSYUAAAAAJzFUTyrFmrQ37--4XCOfJuG1LPu"></div>
+		</div>
+		<div class="col-xs-12 text-center submit-button">
+			<button id="submit_btn" name="submit" class="btn btn-blue uppercase">Make Your Appointment</button>
+		</div>
+	</div>
+
+	<!-- Bottom Error Message -->
+	<div class="col-xs-12 container text-center">
+		<div class="errorsFound block-hidden color-red">Error: Missing or Incorrect Information.  Please make sure all required information has been entered and is correct.</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+    require(['jquery', 'jquery/ui'], function($){ 
+
+$(document).ready(function() {
+  var storeURL = window.location.href;
+  var storeVal = storeURL.split('?store=')[1];
+  setStore(storeVal);
+});
+
+$('#00N1a000007135K').change(function() { 
+   var storeVal = $(this).val();
+   setStore(storeVal);
+});
+
+// DatePicker Init & Settings
+$(function() {
+    $("#date").datepicker({
+      minDate: 0,
+      showAnim: "fadeIn"
+    });
+});
+$("#date").keypress(function(event) {event.preventDefault();});
+// END: DatePicker Init & Settings
+
+// Function to show and hide store info based on Location Dropdown
+function setStore(storeClass) {
+    var store = storeClass;
+    $(".store-active").removeClass("store-active").addClass("store-hidden");
+    if ((store == "arlington") || (store == "a0C1a0000032sFp")) {
+      $("#00N1a000007135K").val('a0C1a0000032sFp');
+      $(".store-arlington").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "bellevue") || (store == "a0C1a0000032sGO")) {
+      $("#00N1a000007135K").val('a0C1a0000032sGO');
+      $(".store-bellevue").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "costa-mesa") || (store == "a0C1a0000032sFf")) {
+      $("#00N1a000007135K").val('a0C1a0000032sFf');
+      $(".store-costa-mesa").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "dallas") || (store == "a0C1a0000032sFa")) {
+      $("#00N1a000007135K").val('a0C1a0000032sFa');
+      $(".store-dallas").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "fullerton") || (store == "a0C1a000002EQmc")) {
+      $("#00N1a000007135K").val('a0C1a000002EQmc');
+      $(".store-fullerton").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "glendale") || (store == "a0C1a0000032sFz")) {
+      $("#00N1a000007135K").val('a0C1a0000032sFz');
+      $(".store-glendale").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "houston-clearlake") || (store == "a0C1a0000032sG9")) {
+      $("#00N1a000007135K").val('a0C1a0000032sG9');
+      $(".store-houston-clearlake").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "houston-loop") || (store == "a0C1a000002ETWl")) {
+      $("#00N1a000007135K").val('a0C1a000002ETWl');
+      $(".store-houston-loop").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "montclair") || (store == "a0C1a0000032sFk")) {
+      $("#00N1a000007135K").val('a0C1a0000032sFk');
+      $(".store-montclair").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "riverside") || (store == "a0C1a0000032sG4")) {
+      $("#00N1a000007135K").val('a0C1a0000032sG4');
+      $(".store-riverside").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "san-diego") || (store == "a0C1a0000032sGT")) {
+      $("#00N1a000007135K").val('a0C1a0000032sGT');
+      $(".store-san-diego").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "scottsdale") || (store == "a0C1a0000032sGE")) {
+      $("#00N1a000007135K").val('a0C1a0000032sGE');
+      $(".store-scottsdale").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "seattle") || (store == "a0C1a0000032sGJ")) {
+      $("#00N1a000007135K").val('a0C1a0000032sGJ');
+      $(".store-seattle").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "torrance") || (store == "a0C1a0000032sGY")) {
+      $("#00N1a000007135K").val('a0C1a0000032sGY');
+      $(".store-torrance").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "woodland-hills") || (store == "a0C1a0000032sFG")) {
+      $("#00N1a000007135K").val('a0C1a0000032sFG');
+      $(".store-woodland-hills").removeClass("store-hidden").addClass("store-active");
+    } else if ((store == "virtual") || (store == "a0C1a0000032sFL")) {
+      $("#00N1a000007135K").val('a0C1a0000032sFL');
+      $(".store-virtual").removeClass("store-hidden").addClass("store-active");
+    } else {
+      $("#00N1a000007135K").val('default');
+    }
+  }
+// END: Function to show and hide store info based on Location Dropdown
+
+// jQuery Phone Mask
+// Validate keyCode's
+function validate_int(e) {
+  if ((e.charCode >= 48 && e.charCode <= 57) || e.keyCode == 9 || e.keyCode == 10 || e.keyCode == 13 || e.keyCode == 8 || e.keyCode == 116 || e.keyCode == 46 || (e.keyCode <= 40 && e.keyCode >= 37)) {
+    valid = true;
+  } else {
+    valid = false;
+  }
+  return valid;
+}
+
+function phone_number_mask() {
+  console.log('Is the phine number mask even called?');
+  var mask = "(___) ___-____";
+  var val = document.getElementById("mobile");
+  var text = "";
+  var numbers = [];
+  var output = ""
+  var lastPosition = 1;
+  text = val.value;
+  // Get each number in the Phone field
+  for (var i = 0; i < text.length; i++) {
+    if (!isNaN(text.charAt(i)) && text.charAt(i) != " ") {
+      numbers.push(text.charAt(i));
+    }
+  }
+  // Write the mask
+  for (var j = 0; j < mask.length; j++) {
+    if (mask.charAt(j) == "_") { //replace "_" by a number 
+      if (numbers.length == 0)
+        output = output + mask.charAt(j);
+      else {
+        output = output + numbers.shift();
+        lastPosition = j + 1; //set caret position
+      }
+    } else {
+      output = output + mask.charAt(j);
+    }
+  }
+  document.getElementById("mobile").value = output;
+  document.getElementById("mobile").setSelectionRange(lastPosition, lastPosition);
+}
+
+document.getElementById("mobile").onkeypress = validate_int;
+document.getElementById("mobile").onkeyup = phone_number_mask;
+// END: jQuery Phone Mask
+
+// Function to Run Validation
+$('#form').on('submit', function (e) {
+
+  // Function to Validate First and Last Name
+  function validateName (name) {
+    var valid_name = /^[a-zA-Z_\- ]+$/;
+    return valid_name.test(name);
+  }
+
+  // Function to Validate Email Address
+  function validateEmail(email) {
+    var valid_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return valid_email.test(email);
+  }
+
+  // Function to Validate Phone Number
+  function validatePhone(number) {
+    var valid_phone = /^(1\s|1|)?((\(\d{3}\))|\d{3})(\-|\s)?(\d{3})(\-|\s)?(\d{4})$/;
+    return valid_phone.test(number);
+  }
+
+  // Set Variables
+  var first_name = $("#first_name").val();
+    first_name_valid = false;
+    last_name = $("#last_name").val();
+    last_name_valid = false;
+    email = $("#email").val();
+    email_valid = false;
+    phone = $("#mobile").val();
+    phone_valid = false;
+    date = $("#date").val();
+    date_valid = false;
+    time_dropdown = $("#time").val();
+    time_dropdown_valid = false;
+    location_dropdown = $("#00N1a000007135K").val();
+    location_dropdown_valid = false;
+    reason_dropdown = $("#00N1a000008kEOX").val();
+    reason_dropdown_valid = false;
+    dateTimeVal = date + " " + time_dropdown;
+
+  // Validate the First Name (Required)
+  if (!validateName(first_name)) {
+    $("#firstNameValidation").removeClass("block-hidden").addClass("block-visible");
+  } else {
+    $("#firstNameValidation").removeClass("block-visible").addClass("block-hidden");
+    first_name_valid = true;
+  }
+
+  // Validate the Last Name (Required)
+  if (!validateName(last_name)) {
+    $("#lastNameValidation").removeClass("block-hidden").addClass("block-visible");
+  } else {
+    $("#lastNameValidation").removeClass("block-visible").addClass("block-hidden");
+    last_name_valid = true;
+  }
+
+  // Validate the Email Address (Required)
+  if (!validateEmail(email)) {
+    $("#emailValidation").removeClass("block-hidden").addClass("block-visible");
+  } else {
+    $("#emailValidation").removeClass("block-visible").addClass("block-hidden");
+    email_valid = true;
+  }
+
+  // Validate the Phone number (Required)
+  if (!validatePhone(phone)) {
+    $("#phoneValidation").removeClass("block-hidden").addClass("block-visible");
+  } else {
+    $("#phoneValidation").removeClass("block-visible").addClass("block-hidden");
+    phone_valid = true;
+  }
+
+  // Validate the Date (Required)
+  if (date == "") {
+    $("#dateValidation").removeClass("block-hidden").addClass("block-visible");
+  } else {
+    $("#dateValidation").removeClass("block-visible").addClass("block-hidden");
+    date_valid = true;
+  }
+
+  // Validate the Time (Required)
+  if (time_dropdown == "default") {
+    $("#timeValidation").removeClass("block-hidden").addClass("block-visible");
+  } else {
+    $("#timeValidation").removeClass("block-visible").addClass("block-hidden");
+    time_dropdown_valid = true;
+  }
+
+  // Validate Location DropDown (Required)
+  if (location_dropdown == "default") {
+    $("#locationDropdownValidation").removeClass("block-hidden").addClass("block-visible");
+  } else {
+    $("#locationDropdownValidation").removeClass("block-visible").addClass("block-hidden");
+    location_dropdown_valid = true;
+  }
+
+  // Validate Reason DropDown (Required)
+  if (reason_dropdown == "default") {
+    $("#reasonDropdownValidation").removeClass("block-hidden").addClass("block-visible");
+  } else {
+    $("#reasonDropdownValidation").removeClass("block-visible").addClass("block-hidden");
+    reason_dropdown_valid = true;
+  }
+
+  // Set the dateTimeVal variable to the the Date/Time value for submission
+  $("#00N1a000007134z").val(dateTimeVal);
+
+  // console.log ("First Name: " + first_name + ", Last Name: " + last_name + ", Email: " + email + ", Phone: " + phone + ", Date: " + date + ", Time: " + time_dropdown + ", Date/Time: " + dateTimeVal + ", Location: " + location_dropdown + ", Reason: " + reason_dropdown + ", Captcha: " + captcha);
+  // console.log ("First Name: " + first_name_valid + ", Last Name: " + last_name_valid + ", Email: " + email_valid + ", Phone: " + phone_valid + ", Date: " + date_valid + ", Time: " + time_dropdown_valid + ", Location: " + location_dropdown_valid + ", Reason: " + reason_dropdown_valid + ", Captcha: " + captcha_valid);
+
+  if ((first_name_valid == false) || (last_name_valid == false) || (email_valid == false) || (phone_valid == false) || (location_dropdown_valid == false) || (reason_dropdown_valid == false) || (date_valid == false) || (time_dropdown_valid == false)) {
+
+    // Stop form from submitting after showing errors
+    e.preventDefault();
+    $(".errorsFound").removeClass("block-hidden").addClass("block-visible");
+
+  } else {
+    $(".errorsFound").removeClass("block-visible").addClass("block-hidden");
+    var response = grecaptcha.getResponse();
+    
+    if(response.length == 0) {
+      e.preventDefault();
+      $(".errorsFound").removeClass("block-hidden").addClass("block-visible");
+      $("#captchaValidation").removeClass("block-hidden").addClass("block-visible");
+    } else {
+      $(".errorsFound").removeClass("block-visible").addClass("block-hidden");
+      $("#captchaValidation").removeClass("block-visible").addClass("block-hidden");
+    }
+
+  }
+
+  if (e.isDefaultPrevented()) {
+    return false;
+  } else {
+    return true;
+  }
+});
+// END: Function to Run Validation
+});</script>
+
+</body>
