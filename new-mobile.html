@@ -3,33 +3,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <style>
-* {box-sizing: border-box;}
-.column {  float: left;  width: 50%;  padding: 10px;  height: 300px; }
-.row:after {  content: "";  display: table;  clear: both;}
+  * {box-sizing: border-box;}
+  .column {  float: left;  width: 50%;  padding: 10px;  height: 300px; }
+  .row:after {  content: "";  display: table;  clear: both;}
 </style>
 </head>
 
 <body>
+
 <section>
 <div style="width:auto; text-align:center;">
 <h1>Let's Make An Appointment</h1>
 <p>We offer both in-store and virtual appointment. Select the most convenient option for you:</p><br>
-
 <div class="row">
   <div id="div1" class="column">
-    <h2>In-Store Appointment</h2>
-    <p>We’d love to set aside some time to address your needs. Schedule an appointment with us and we look forward to provide the best in-class experience at one of our 15 locations.</p>
-    <a href="javascript:;" class="btn btn-pink" onclick="setster_widget_in_store_m.show(); return false;">Make an In-Store Appointment</a>
+  <h2>In-Store Appointment</h2>
+  <p>We’d love to set aside some time to address your needs. Schedule an appointment with us and we look forward to provide the best in-class experience at one of our 15 locations.</p>
+  <a href="javascript:;" class="btn btn-pink" onclick="setster_widget_in_store_m.show(); return false;">Make an In-Store Appointment</a>
   </div>
-
   <div id="div2" class="column">
-    <h2>Virtual Appointment</h2>
-    <p>Your time is valuable—we totally get it—which is why we offer a Virtual Shopping Experience as an extended service to you. Through a Virtual Shopping Experience, you’ll interact with a Robbins Brothers Design Specialist in a live video chat. You’ll get the answer to any and all questions you may have on engagement rings or diamonds. Yes, it’s like making a visit to our store – because that’s what it is. Fun, easy and convenient. You can see us, but we can't see you. Unless of course you want us to! You don't need a camera to enjoy this, just an internet connection and a device to view.</p>
-    <p>Phone: 800-295-1543 Virtual Store Hours: (Pacific Time) Mon - Fri: 9 AM - 6 PM</p>
-    <a href="javascript:;" class="btn btn-pink" onclick="setster_widget_virtual_m.show(); return false; ">Make a Virtual Appointment</a>
+  <h2>Virtual Appointment</h2>
+  <p>Your time is valuable—we totally get it—which is why we offer a Virtual Shopping Experience as an extended service to you. Through a Virtual Shopping Experience, you’ll interact with a Robbins Brothers Design Specialist in a live video chat. You’ll get the answer to any and all questions you may have on engagement rings or diamonds. Yes, it’s like making a visit to our store – because that’s what it is. Fun, easy and convenient. You can see us, but we can't see you. Unless of course you want us to! You don't need a camera to enjoy this, just an internet connection and a device to view.</p>
+  <p>Phone: 800-295-1543 Virtual Store Hours: (Pacific Time) Mon - Fri: 9 AM - 6 PM</p>
+  <a href="javascript:;" class="btn btn-pink" onclick="setster_widget_virtual_m.show(); return false; ">Make a Virtual Appointment</a>
   </div>
 </div>
-
 
 <script type="text/javascript" charset="utf-8">
   var setster_widget_in_store_m = null;
@@ -61,7 +59,10 @@
       setster_widget_virtual_m = new Setster.setster_widget(setster_widget_options);
     }
   }
-  function onLoad() {loadInStoreWidgetm();}
+function onLoad() {
+  loadInStoreWidgetm();
+  loadVirtualWidgetm();
+}
 </script>
 
 <script type="text/javascript" charset="utf-8">
@@ -73,7 +74,7 @@
   head.appendChild(script);
   script.onload = onLoad
 </script>
-</section>
 
+</section>
 </body>
 </html>
