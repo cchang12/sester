@@ -2,32 +2,43 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<style>
-  * {box-sizing: border-box;}
-  .column {  float: left;  width: 50%;  padding: 10px;  height: 300px; }
-  .row:after {  content: "";  display: table;  clear: both;}
-</style>
+
 </head>
 
-<body>
+<!-- open in new tab links -->
+<!-- 
+In-Store
+https://www.setster.com/mobile/?&nickname=robbinsbrothers&defaultLocation=30257%7C30258%7C30259%7C30260%7C30261%7C30262%7C30268%7C30269%7C30270%7C30271%7C30272%7C30273%7C30274%7C30275%7C30276&gaqEnabled=1&overwdg=1&ref=https%3A%2F%2Fcchang12.github.io%2Fsetster%2Fnew-mobile.html&gaqEnabled=1
 
-<section>
-<div style="width:auto; text-align:center;">
-<h1>Let's Make An Appointment</h1>
-<p>We offer both in-store and virtual appointment. Select the most convenient option for you:</p><br>
-<div class="row">
-  <div id="div1" class="column">
-  <h2>In-Store Appointment</h2>
-  <p>We’d love to set aside some time to address your needs. Schedule an appointment with us and we look forward to provide the best in-class experience at one of our 15 locations.</p>
-  <a href="javascript:;" class="btn btn-pink" onclick="setster_widget_in_store_m.show(); return false;">Make an In-Store Appointment</a>
+Virtual
+https://www.setster.com/mobile/?&nickname=robbinsbrothers&defaultLocation=30331&defaultService=55312%7C55315%7C55450%7C55451%7C55316&gaqEnabled=1&overwdg=1&ref=https%3A%2F%2Fcchang12.github.io%2Fsetster%2Fnew-mobile.html&gaqEnabled=1&gaqEnabled=1#products
+-->
+
+<body>
+<!-- hero -->
+<section class="hero">
+  <img class="img-hero-diamond-brand img-w100" src="https://s7d5.scene7.com/is/image/RobbinsBros/Appointment?scl=1"  alt="shopping when and where you want">
+</section>
+
+<section class="vdr-intro">    
+  <div class="container">
+        <h1 class="h1-with-slogan">Let's Make An Appointment</h1>
+        <p>We offer both in-store and virtual appointment. Select the most convenient option for you:</p><br>
+        <div class="row">
+        <div class="col-xs-12 col-md-5 col-md-push-7 vertical-center-col px-0">
+          <h3 class="heading-wrapper">Virtual Appointment</h3>
+          <p>Your time is valuable—we totally get it—which is why we offer a Virtual Shopping Experience as an extended service to you. Through a Virtual Shopping Experience, you’ll interact with a Robbins Brothers Design Specialist in a live video chat. You’ll get the answer to any and all questions you may have on engagement rings or diamonds. Yes, it’s like making a visit to our store – because that’s what it is. Fun, easy and convenient. You can see us, but we can't see you. Unless of course you want us to! You don't need a camera to enjoy this, just an internet connection and a device to view.</p><br>
+          <p>Phone: 800-295-1543 <br>Virtual Store Hours: (Pacific Time) Mon - Fri: 9 AM - 6 PM</p>
+          <a href="javascript:;" class="btn btn-pink" onclick="setster_widget_virtual_m.show(); return false; ">Make a Virtual Appointment</a>
+        </div>
+        <div class="col-xs-12 col-md-6  col-md-pull-5 vertical-center-col">
+          <h3 class="heading-wrapper">In-Store Appointment</h3>
+          <p>We’d love to set aside some time to address your needs. Schedule an appointment with us and we look forward to provide the best in-class experience at one of our 15 locations.</p>
+          <a href="javascript:;" class="btn btn-pink" onclick="setster_widget_in_store_m.show(); return false;">Make an In-Store Appointment</a>
+          </div>
+        </div>
   </div>
-  <div id="div2" class="column">
-  <h2>Virtual Appointment</h2>
-  <p>Your time is valuable—we totally get it—which is why we offer a Virtual Shopping Experience as an extended service to you. Through a Virtual Shopping Experience, you’ll interact with a Robbins Brothers Design Specialist in a live video chat. You’ll get the answer to any and all questions you may have on engagement rings or diamonds. Yes, it’s like making a visit to our store – because that’s what it is. Fun, easy and convenient. You can see us, but we can't see you. Unless of course you want us to! You don't need a camera to enjoy this, just an internet connection and a device to view.</p>
-  <p>Phone: 800-295-1543 Virtual Store Hours: (Pacific Time) Mon - Fri: 9 AM - 6 PM</p>
-  <a href="javascript:;" class="btn btn-pink" onclick="setster_widget_virtual_m.show(); return false; ">Make a Virtual Appointment</a>
-  </div>
-</div>
+</section>
 
 <script type="text/javascript" charset="utf-8">
   var setster_widget_in_store_m = null;
@@ -75,6 +86,5 @@ function onLoad() {
   script.onload = onLoad
 </script>
 
-</section>
 </body>
 </html>
